@@ -28,7 +28,7 @@ module.exports = {
         path: "app",                // Edit this to customize the path to start the shell from
         message: [
           "pip install gradio devicetorch",
-          "{{os.platform() === 'win32' ? 'echo 7 | setup.bat' : 'echo 7 | chmod +x ./setup.sh && ./setup.sh'}}"
+          "{{os.platform() === 'win32' ? 'echo 1 | setup.bat' : 'echo 1 | chmod +x ./setup.sh && ./setup.sh'}}"
         ]
       }
     },
