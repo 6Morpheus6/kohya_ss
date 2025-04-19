@@ -26,8 +26,9 @@ module.exports = {
       method: "shell.run",
       params: {
         path: "app",                // Edit this to customize the path to start the shell from
+        venv: "venv",                // Edit this to customize the path to start the shell from
         message: [
-          "pip install gradio devicetorch",
+          "uv pip install gradio devicetorch",
           "{{os.platform() === 'win32' ? 'echo 1 | setup.bat' : 'chmod +x ./setup.sh && ./setup.sh'}}"
         ]
       }
