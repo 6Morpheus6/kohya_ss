@@ -8,7 +8,7 @@ module.exports = {
       venv: "venv",
       env: { },
       message: [
-        "{{os.platform() === 'win32' ? 'gui.bat' : 'bash gui.sh'}}"
+        "{{os.platform() === 'win32' ? 'gui.bat --noverify' : 'bash gui.sh --noverify'}}"
       ],
         on: [{
           // The regular expression pattern to monitor.
