@@ -20,7 +20,7 @@ module.exports = {
       "params": {
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
-        "message": "uv pip install torch==2.1.2 torchvision==0.16.2 torchaudio {{args && args.xformers ? 'xformers' : ''}}  --index-url https://download.pytorch.org/whl/cu118"
+        "message": "uv pip install torch==2.1.2 torchvision==0.16.2 torchaudio {{args && args.xformers ? 'xformers' : ''}}  --index-url https://download.pytorch.org/whl/cu118 --index-strategy unsafe-best-match"
       }
     },
     // windows amd
@@ -60,7 +60,7 @@ module.exports = {
       "params": {
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
-        "message": "uv pip install torch==2.1.2 torchvision==0.16.2 torchaudio {{args && args.xformers ? 'xformers' : ''}}  --index-url  https://download.pytorch.org/whl/cu118"
+        "message": "uv pip install torch==2.1.2 torchvision==0.16.2 torchaudio {{args && args.xformers ? 'xformers' : ''}}  --index-url  https://download.pytorch.org/whl/cu118 --index-strategy unsafe-best-match"
       }
     },
     // linux rocm (amd)
@@ -70,7 +70,7 @@ module.exports = {
       "params": {
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
-        "message": "uv pip install torch==2.1.2 torchvision==0.16.2 torchaudio --index-url https://download.pytorch.org/whl/rocm6.0"
+        "message": "uv pip install torch==2.1.2 torchvision==0.16.2 torchaudio --index-url https://download.pytorch.org/whl/rocm6.0 --index-strategy unsafe-best-match"
       }
     },
     // linux cpu
