@@ -8,7 +8,7 @@ module.exports = {
         "venv": "{{args && args.venv ? args.venv : null}}",
         "path": "{{args && args.path ? args.path : '.'}}",
         "message": [
-          'uv pip install --pre "torch>2.6.0,<2.8.0" torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu128 --force-reinstall --no-deps --index-strategy unsafe-best-match',
+          "uv pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128 {{args && args.xformers ? 'xformers' : ''}} --force-reinstall --no-deps --index-strategy unsafe-best-match",
           'uv pip install -U bitsandbytes --force-reinstall --no-deps'
         ]
       },
