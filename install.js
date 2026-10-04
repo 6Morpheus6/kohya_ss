@@ -41,6 +41,13 @@ module.exports = {
       }
     },
     {
+      method: "fs.copy",
+      params: {
+        src: "tag_images_by_wd14_tagger.py",
+        dest: "app/sd-scripts/finetune/tag_images_by_wd14_tagger.py"
+      }
+    },
+    {
       method: "notify",
       params: {
         html: "Installation successful!"
