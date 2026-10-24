@@ -12,6 +12,7 @@ module.exports = {
       }
     },
     {
+      when: "{{platform === 'win32'}}",
       method: "shell.run",
       params: {
         path: "app",
@@ -19,6 +20,42 @@ module.exports = {
         message: [
           "uv pip install gradio devicetorch",
           "python setup/setup_windows.py --headless"
+        ]
+      }
+    },
+    {
+      when: "{{platform === 'linux' && gpu === 'nvidia'}}",
+      method: "shell.run",
+      params: {
+        path: "app",
+        venv: "venv",
+        message: [
+          "uv pip install gradio devicetorch",
+          "python setup/setup_linux.py --platform-requirements-file=requirements_linux.txt"
+        ]
+      }
+    },
+    {
+      when: "{{platform === 'linux' && gpu === 'amd'}}",
+      method: "shell.run",
+      params: {
+        path: "app",
+        venv: "venv",
+        message: [
+          "uv pip install gradio devicetorch",
+          "python setup/setup_linux.py --platform-requirements-file=requirements_linux_rocm.txt"
+        ]
+      }
+    },
+    {
+      when: "{{platform === 'darwin'}}",
+      method: "shell.run",
+      params: {
+        path: "app",
+        venv: "venv",
+        message: [
+          "uv pip install gradio devicetorch",
+          "python setup/setup_linux.py --platform-requirements-file=requirements_macos_amd64.txt"
         ]
       }
     },
