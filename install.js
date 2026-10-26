@@ -55,7 +55,7 @@ module.exports = {
         venv: "venv",
         message: [
           "uv pip install gradio devicetorch",
-          "python setup/setup_linux.py --platform-requirements-file=requirements_macos_amd64.txt"
+          "python setup/setup_linux.py --platform-requirements-file=requirements_macos_arm64.txt"
         ]
       }
     },
