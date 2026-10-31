@@ -5,10 +5,28 @@ module.exports = {
       message: "git pull"
     }
   }, {
+    when: "{{platform !== 'darwin'}}",
     method: "shell.run",
     params: {
       path: "app",
       message: "git pull"
+    }
+  }, {
+    when: "{{platform === 'darwin'}}",
+    method: "shell.run",
+    params: {
+      path: "app",
+      message: [
+        "git reset --hard",
+        "git pull"
+      ]
+    }
+  }, {
+    when: "{{platform === 'darwin'}}",
+    method: "fs.copy",
+    params: {
+      src: "requirements_macos_arm64.txt",
+      dest: "app/requirements_macos_arm64.txt"
     }
   }, {
     method: "fs.copy",

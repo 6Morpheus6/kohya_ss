@@ -12,6 +12,14 @@ module.exports = {
       }
     },
     {
+      when: "{{platform === 'darwin'}}",
+      method: "fs.copy",
+      params: {
+        src: "requirements_macos_arm64.txt",
+        dest: "app/requirements_macos_arm64.txt"
+      }
+    },
+    {
       when: "{{platform === 'win32'}}",
       method: "shell.run",
       params: {
